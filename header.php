@@ -12,7 +12,7 @@
 </head>
 <body>
 	<header>
-		<nav class="navigation" aria-label="main-navigation">
+		<nav class="navigation" aria-label="main-navigation" <? body_class() ?>>
             <div class="navbar page-padding">
                 <a class="home-link heading step--1" href="<?php echo get_home_url(); ?>"><?php bloginfo('name') ?></a>
                 <button class="nav-toggle" aria-label="Toggle navigation" aria-haspopup="true" aria-expanded="false" aria-controls="nav-drawer">
