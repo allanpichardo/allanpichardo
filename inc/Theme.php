@@ -10,7 +10,7 @@ class Theme
 
 	private Hooks $hooks;
 
-    public function __construct(string $version)
+    public function __construct(string $version = '1.0.0')
     {
         $enqueue = new Enqueue(
             self::THEME_NAME,
