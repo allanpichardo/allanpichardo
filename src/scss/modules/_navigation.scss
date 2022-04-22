@@ -73,6 +73,7 @@ header {
     position: fixed;
     top: 0;
     transition: left $transition-duration-short ease-in-out;
+    visibility: hidden;
     width: 100%;
 
     a {
@@ -82,6 +83,7 @@ header {
 
   &.open .nav-drawer {
     left: 0;
+    visibility: visible;
   }
 
   .nav-list {

@@ -1,12 +1,12 @@
 	</main>
 	<footer class="footer">
-		<nav class="footer-nav page-padding">
-            <a class="home-link heading step--1" href="#">Allan Pichardo</a>
-            <ul class="link-list step--2">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Terms</a></li>
-                <li><a href="#">Privacy</a></li>
+		<nav class="footer-nav page-padding" aria-label="Footer Navigation">
+            <a class="home-link heading step--1" href="<?php get_home_url() ?>">Allan Pichardo</a>
+            <ul class="link-list step--2" role="menu">
+                <li role="none"><a role="menuitem" href="#">About</a></li>
+                <li role="none"><a role="menuitem" href="#">Contact</a></li>
+                <li role="none"><a role="menuitem" href="#">Terms</a></li>
+                <li role="none"><a role="menuitem" href="#">Privacy</a></li>
             </ul>
         </nav>
 	</footer>
