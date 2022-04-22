@@ -1,6 +1,15 @@
 header {
+  opacity: 1;
   position: sticky;
   top: 0;
+  transition: opacity $transition-duration-short ease-in-out;
+  visibility: visible;
+
+  &.invisible {
+    opacity: 0;
+    transition: opacity $transition-duration-short ease-in-out, visibility 0s linear $transition-duration-short;
+    visibility: hidden;
+  }
 }
 
 .navigation {
