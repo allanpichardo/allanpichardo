@@ -6,7 +6,7 @@
 get_header();
 ?>
 <div class="styleguide page-padding">
-	<h1 class="heading step-5">Styleguide</h1>
+	<h1 class="heading step-5">Style Guide</h1>
     <hr>
     <h2 class="heading step-3">Typography</h2>
     <h1 class="heading step-5">Heading 1</h1>

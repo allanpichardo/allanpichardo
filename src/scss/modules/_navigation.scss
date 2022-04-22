@@ -1,0 +1,108 @@
+header {
+  position: sticky;
+  top: 0;
+}
+
+.navigation {
+  $navbar-height: 64px;
+
+  .navbar {
+    align-items: center;
+    display: flex;
+    height: $navbar-height;
+    justify-content: space-between;
+
+    .home-link {
+      color: $black;
+      transition: color $transition-duration-short ease-in-out;
+      z-index: 100;
+    }
+
+    .nav-toggle {
+      background: none;
+      z-index: 100;
+
+      .nav-toggle-text {
+        display: none;
+      }
+
+      .nav-toggle-bar {
+        background-color: $black;
+        display: block;
+        height: 3px;
+        margin: 5px 0;
+        transition: all $transition-duration-short ease-in-out;
+        width: $space-s;
+      }
+
+      &:hover .nav-toggle-bar {
+        background-color: $blue-bright;
+      }
+    }
+  }
+
+  &.open .home-link {
+    color: $white;
+  }
+
+  &.open .nav-toggle {
+    .nav-toggle-bar {
+      background-color: $white;
+    }
+    .nav-toggle-bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .nav-toggle-bar:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-toggle-bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+
+  .nav-drawer {
+    background-color: $black;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    flex-direction: column;
+    height: 100%;
+    left: 100%;
+    overflow-y: scroll;
+    padding-top: $navbar-height;
+    position: fixed;
+    top: 0;
+    transition: left $transition-duration-short ease-in-out;
+    width: 100%;
+
+    a {
+      color: $white;
+    }
+  }
+
+  &.open .nav-drawer {
+    left: 0;
+  }
+
+  .nav-list {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    grid-area: 1 / 1 / 2 / 2;
+    justify-content: center;
+  }
+
+  .social-list {
+    display: flex;
+    flex-direction: row;
+    grid-area: 2 / 1 / 3 / 2;
+    justify-content: flex-end;
+    margin-bottom: $space-xs;
+
+    li {
+      display: block;
+      margin-left: $space-xs;
+    }
+  }
+
+}
