@@ -1,0 +1,40 @@
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+.button {
+  border-radius: 0.5em;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+
+  &.primary {
+    background: $blue-gray;
+    color: $white;
+
+    &:hover {
+      background: $blue-gray-dark;
+    }
+  }
+
+  &.secondary {
+    background: $white;
+    border: 1px solid $blue-gray;
+    color: $blue-gray;
+
+    &:hover {
+      background: $blue-gray-dark;
+      border: 1px solid $white;
+      color: $white;
+    }
+  }
+
+  &[disabled] {
+    color: $off-black;
+    opacity: 0.5;
+  }
+}
