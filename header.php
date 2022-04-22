@@ -4,7 +4,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>
-		<?php wp_title('–', true, 'right'); bloginfo('name'); ?>
+		<?php use Portfolio\AriaNavWalker;
+
+		wp_title('–', true, 'right'); bloginfo('name'); ?>
 	</title>
 	<?php wp_head(); ?>
 </head>
@@ -23,16 +25,30 @@
                 </button>
             </div>
             <div id="nav-drawer" class="nav-drawer page-padding" aria-hidden="true">
-                <ul class="nav-list heading step-5" role="menu">
-                    <li role="none"><a role="menuitem" href="<?php echo get_home_url(); ?>">Home</a></li>
-                    <li role="none"><a role="menuitem" href="<?php echo get_home_url(); ?>/about">About</a></li>
-                    <li role="none"><a role="menuitem" href="<?php echo get_home_url(); ?>/contact">Contact</a></li>
-                </ul>
-                <ul class="social-list heading step--2" role="menu">
-                    <li role="none"><a role="menuitem" href="https://twitter.com/">Twitter</a></li>
-                    <li role="none"><a role="menuitem" href="https://www.instagram.com/">Instagram</a></li>
-                    <li role="none"><a role="menuitem" href="https://www.instagram.com/">Github</a></li>
-                </ul>
+                <?php wp_nav_menu([
+                        'theme_location' => 'navigation-menu',
+                        'container' => false,
+                        'menu_class' => 'nav-list heading step-5',
+                        'items_wrap' => '<ul id="%1$s" class="%2$s" role="menu">%3$s</ul>',
+                        'walker' => new AriaNavWalker()
+                ]); ?>
+<!--                <ul class="nav-list heading step-5" role="menu">-->
+<!--                    <li role="none"><a role="menuitem" href="--><?php //echo get_home_url(); ?><!--">Home</a></li>-->
+<!--                    <li role="none"><a role="menuitem" href="--><?php //echo get_home_url(); ?><!--/about">About</a></li>-->
+<!--                    <li role="none"><a role="menuitem" href="--><?php //echo get_home_url(); ?><!--/contact">Contact</a></li>-->
+<!--                </ul>-->
+                <?php wp_nav_menu([
+                        'theme_location' => 'social-menu',
+                        'container' => false,
+                        'menu_class' => 'social-list heading step--2',
+                        'items_wrap' => '<ul id="%1$s" class="%2$s" role="menu">%3$s</ul>',
+                        'walker' => new AriaNavWalker()
+                ]); ?>
+<!--                <ul class="social-list heading step--2" role="menu">-->
+<!--                    <li role="none"><a role="menuitem" href="https://twitter.com/">Twitter</a></li>-->
+<!--                    <li role="none"><a role="menuitem" href="https://www.instagram.com/">Instagram</a></li>-->
+<!--                    <li role="none"><a role="menuitem" href="https://www.instagram.com/">Github</a></li>-->
+<!--                </ul>-->
             </div>
         </nav>
 	</header>

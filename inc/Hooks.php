@@ -20,6 +20,9 @@ class Hooks {
 
 		// disable gutenberg
 		add_filter('use_block_editor_for_post_type', [ $this, 'disableGutenberg' ], 10, 2);
+
+		// menu locations
+		add_action('init', [ $this, 'registerMenuLocations' ]);
 	}
 
 	public function enqueueScripts() {
@@ -55,5 +58,13 @@ class Hooks {
 
 	public function disableGutenberg($current_status, $post_type) {
 		return false;
+	}
+
+	public function registerMenuLocations() {
+		register_nav_menus([
+			'navigation-menu' => __('Navigation Menu'),
+			'social-menu' => __('Social Menu'),
+			'footer-menu' => __('Footer Menu'),
+		]);
 	}
 }
