@@ -8,6 +8,9 @@ $black: #0D0D0D;
 
 $transition-duration-short: 0.3s;
 
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
 //Fluid type scale
 /* @link https://utopia.fyi/type/calculator?c=320,21,1.2,1920,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
 $step--2: clamp(0.91rem, calc(0.90rem + 0.05vw), 0.96rem);

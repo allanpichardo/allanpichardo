@@ -20,6 +20,8 @@ class Theme
         );
 
 		$this->hooks = new Hooks($enqueue);
+
+	    add_theme_support( 'post-thumbnails' );
     }
 
 

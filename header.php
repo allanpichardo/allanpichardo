@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>
-		<?php wp_title('–', true, 'right'); ?>
+		<?php wp_title('–', true, 'right'); bloginfo('name'); ?>
 	</title>
 	<?php wp_head(); ?>
 </head>
@@ -31,7 +31,7 @@
                 <ul class="social-list heading step--2" role="menu">
                     <li role="none"><a role="menuitem" href="https://twitter.com/">Twitter</a></li>
                     <li role="none"><a role="menuitem" href="https://www.instagram.com/">Instagram</a></li>
-                    <li role="none"><a role="menuitem" href="https://www.instagram.com/">Linkedin</a></li>
+                    <li role="none"><a role="menuitem" href="https://www.instagram.com/">Github</a></li>
                 </ul>
             </div>
         </nav>

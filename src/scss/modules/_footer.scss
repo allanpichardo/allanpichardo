@@ -1,0 +1,46 @@
+.footer {
+  background-color: $black;
+  color: $white;
+
+  .footer-nav {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 64px auto;
+    padding-bottom: $space-2xs-xs;
+    padding-top: $space-2xs-xs;
+
+    @include media-query($breakpoint-tablet) {
+      grid-column-gap: $space-2xs-xs;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: auto;
+    }
+
+    a {
+      color: $white;
+    }
+
+    .home-link {
+      grid-area: 1 / 1 / 2 / 2;
+      justify-self: start;
+
+      @include media-query($breakpoint-tablet) {
+        grid-area: 1 / 1 / 2 / 2;
+      }
+    }
+
+    .link-list {
+      grid-area: 2 / 1 / 3 / 2;
+
+      @include media-query($breakpoint-tablet) {
+        columns: 2;
+        grid-area: 1 / 2 / 2 / 3;
+        text-align: end;
+      }
+
+      li {
+        font-weight: 300;
+        margin-bottom: $space-2xs;
+      }
+    }
+  }
+}

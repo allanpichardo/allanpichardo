@@ -8,7 +8,7 @@ module.exports = {
 	// Used to generate banners on top of compiled stuff
 	bannerConfig: {
 		name: 'allanpichardo',
-		author: '',
+		author: 'Allan Pichardo',
 		license: 'UNLICENSED',
 		link: 'UNLICENSED',
 		version: pkg.version,

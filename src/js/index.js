@@ -5,7 +5,7 @@ function main() {
     if(navigationRoot) {
         import('./modules/navigation').then(module => {
             const Navigation = module.default;
-            window.navigation = new Navigation(navigationRoot)
+            window.navigation = new Navigation(navigationRoot);
         });
     }
 }

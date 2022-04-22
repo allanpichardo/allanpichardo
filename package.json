@@ -1,6 +1,7 @@
 {
   "name": "allanpichardo",
-  "version": "0.1.0",
+  "author": "Allan Pichardo",
+  "version": "1.0.0",
   "private": true,
   "devDependencies": {
     "@wpackio/scripts": "^6.4.0",
