@@ -1,12 +1,16 @@
+<?php
+use Portfolio\AriaNavWalker;
+?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>
-		<?php use Portfolio\AriaNavWalker;
-
-		wp_title('–', true, 'right'); bloginfo('name'); ?>
+		<?php
+        wp_title('–', true, 'right');
+        bloginfo('name');
+        ?>
 	</title>
 	<?php wp_head(); ?>
 </head>

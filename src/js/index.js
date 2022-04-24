@@ -16,6 +16,14 @@ function main() {
             window.footer = new Footer(footerRoot);
         });
     }
+
+    const workGrid = document.querySelector('.work-grid');
+    if(workGrid) {
+        import('./modules/work-grid').then(module => {
+            const WorkGrid = module.default;
+            window.workGrid = new WorkGrid(workGrid);
+        });
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
