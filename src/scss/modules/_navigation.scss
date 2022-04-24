@@ -23,6 +23,7 @@ header {
 
     .home-link {
       color: $black;
+      mix-blend-mode: difference;
       transition: color $transition-duration-short ease-in-out;
       z-index: 100;
     }

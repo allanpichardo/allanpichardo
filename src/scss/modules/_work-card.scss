@@ -1,0 +1,54 @@
+.work-card {
+  height: 300px;
+
+  a {
+    border-radius: $space-2xs;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    height: 100%;
+    width: 100%;
+
+    &:hover {
+      .overlay {
+        opacity: 1;
+      }
+
+      .title {
+        opacity: 1;
+      }
+    }
+  }
+
+  .overlay {
+    background-color: $blue-bright;
+    border-radius: $border-radius;
+    grid-area: 1 / 1 / 3 / 2;
+    height: 100%;
+    opacity: 0;
+    mix-blend-mode: difference;
+    transition: opacity $transition-duration-short ease-in-out;
+    width: 100%;
+  }
+
+  .thumbnail {
+    border-radius: $border-radius;
+    grid-area: 1 / 1 / 3 / 2;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .title {
+    align-items: center;
+    align-self: end;
+    color: $white;
+    display: flex;
+    grid-area: 2 / 1 / 3 / 2;
+    margin: 0;
+    mix-blend-mode: difference;
+    opacity: 0;
+    transition: opacity $transition-duration-short ease-in-out;
+    padding: $space-2xs;
+  }
+}

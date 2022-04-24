@@ -1,20 +1,23 @@
 <?php
 $title = 'A Clever Title';
 $media_type = 'video';
-$youtube_url = 'https://www.youtube-nocookie.com/embed/AgljUimWrAw';
-$youtube_url .= '?rel=0&amp;autoplay=1&amp;controls=1&amp;showinfo=0&amp;playsinline=1';
+$url = null;
+$tag = !empty($url) ? 'a' : 'div';
+
 ?>
 <section class="hero page-padding">
     <div class="title-area">
-        <h1 class="heading step-4"><?= $title ?></h1>
+        <h1 class="heading step-5"><?= $title ?></h1>
     </div>
-    <div class="media-container">
+    <<?=$tag?> class="media-container" href="#">
         <?php if ($media_type === 'image') : ?>
             <img src="https://placekitten.com/800/600" alt="Hero Image">
         <?php elseif ($media_type === 'video') : ?>
-            <iframe width="560" height="315" src="<?= $youtube_url ?>" title="<?= $title ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <video autoplay muted loop playsinline>
+                <source src="<?=sprintf("%s/img/jump1.mp4", get_stylesheet_directory_uri()) ?>" type="video/mp4">
+            </video>
         <?php endif; ?>
-    </div>
+    </<?=$tag?>>
     <div class="notes-area">
         <p class="sidenote step--1 bold">Some notes 2022</p>
     </div>

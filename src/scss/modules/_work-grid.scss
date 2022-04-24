@@ -1,0 +1,7 @@
+.work-grid {
+  display: grid;
+  grid-gap: $space-s;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: auto;
+  margin: $space-l auto;
+}
