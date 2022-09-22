@@ -1,0 +1,20 @@
+.multi-column-text {
+  margin: $space-l 0;
+
+  .content-section {
+    display: grid;
+    grid-gap: $space-xs;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: auto;
+
+    .column {
+      .subtitle {
+        margin: 0 0 $space-s 0;
+      }
+    }
+  }
+
+  .title {
+    margin: $space-s 0;
+  }
+}

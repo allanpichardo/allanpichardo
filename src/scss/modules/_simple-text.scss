@@ -1,0 +1,15 @@
+.simple-text {
+  margin: $space-l 0;
+
+  .title {
+    margin: $space-s 0;
+  }
+
+  .subtitle {
+    margin: 0 0 $space-s 0;
+  }
+
+  .content-section {
+    display: block;
+  }
+}

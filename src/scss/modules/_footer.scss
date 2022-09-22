@@ -6,8 +6,8 @@
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 64px auto;
-    padding-bottom: $space-2xs-xs;
-    padding-top: $space-2xs-xs;
+    padding-bottom: $space-l;
+    padding-top: $space-l;
 
     @include media-query($breakpoint-tablet) {
       grid-column-gap: $space-2xs-xs;
