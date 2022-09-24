@@ -1,4 +1,5 @@
 <?php
+$version = 'primary'; // primary | secondary
 $title = 'A Clever Title';
 $media_type = 'video';
 $url = null;
@@ -6,7 +7,7 @@ $tag = !empty($url) ? 'a' : 'div';
 
 ?>
 <section class="hero page-padding">
-    <div class="title-area">
+    <div class="title-area <?=$version?>">
         <h1 class="heading step-5"><?= $title ?></h1>
     </div>
     <<?=$tag?> class="media-container" href="#">

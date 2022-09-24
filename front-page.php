@@ -10,6 +10,7 @@ get_header();
 	<?php get_template_part('template-parts/multi-column-text'); ?>
 	<?php get_template_part('template-parts/simple-text'); ?>
 	<?php get_template_part('template-parts/full-width-media'); ?>
+    <?php get_template_part('template-parts/media-and-text'); ?>
 </div>
 <?php
 get_footer();
