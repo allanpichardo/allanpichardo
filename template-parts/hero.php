@@ -1,7 +1,7 @@
 <?php
 $version = 'primary'; // primary | secondary
 $title = 'A Clever Title';
-$media_type = 'video';
+$media_type = 'video'; // image | video
 $url = null;
 $tag = !empty($url) ? 'a' : 'div';
 
