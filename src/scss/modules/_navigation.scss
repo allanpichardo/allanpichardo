@@ -85,6 +85,7 @@ header {
     transition: left $transition-duration-short ease-in-out, visibility 0s linear $transition-duration-short;
     visibility: hidden;
     width: 100%;
+    z-index: 10;
 
     a {
       color: $white;

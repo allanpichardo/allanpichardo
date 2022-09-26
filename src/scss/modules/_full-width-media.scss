@@ -12,12 +12,15 @@
 
   .media-container {
     align-items: center;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     justify-content: center;
-    position: relative;
+    //position: relative;
     &:before {
       display: block;
       content: "";
+      grid-area: 1 / 1 / 2 / 2;
       width: 100%;
       padding-top: (9 / 16) * 100%;
     }
@@ -25,15 +28,14 @@
     > img, > iframe, > video {
       border-radius: $border-radius;
       bottom: 0;
+      grid-area: 1 / 1 / 2 / 2;
       height: 100%;
       left: 0;
       margin: 0 auto;
-      position: absolute;
       right: 0;
       top: 0;
       max-width: 100%;
       width: auto;
-      z-index: -1;
     }
 
     > iframe, video {

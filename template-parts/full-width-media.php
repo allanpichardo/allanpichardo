@@ -21,11 +21,13 @@ $sidenote   = get_sub_field('sidenote');
     <?php endif; ?>
 	<<?=$tag?> class="media-container" <?=!empty($url) ? sprintf('href="%s" target="%s"', $url['url'], $url['target']) : ''?> >
         <?php if ($media_type === 'image') : ?>
-            <?=Theme::getImageSrcset($image)?>
+            <?=Theme::getImageSrcset($image['ID'])?>
         <?php elseif ($media_type === 'video') : ?>
-            <?=Theme::getVideoTag($video, '', $autoplay)?>
+            <?=Theme::getVideoTag($video['ID'], '', $autoplay)?>
         <?php elseif ($media_type === 'iframe') : ?>
+            <?php remove_filter( 'the_content', 'shortcode_unautop' ); ?>
             <?=$embed_code?>
+            <?php add_filter( 'the_content', 'shortcode_unautop' ); ?>
         <?php endif; ?>
     </<?=$tag?>>
     <?php if(!empty($sidenote)): ?>

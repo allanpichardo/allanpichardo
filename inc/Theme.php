@@ -24,7 +24,7 @@ class Theme
 	    add_theme_support( 'post-thumbnails' );
     }
 
-	public static function getImageSrcset(string $image, string $alt = '', string $size = 'medium')
+	public static function getImageSrcset($image, string $alt = '', string $size = 'medium')
 	{
 		$image_alt = !empty($alt) ? $alt : get_post_meta($image, '_wp_attachment_image_alt', TRUE);
 		$img_src = wp_get_attachment_image_url( $image, $size );
@@ -35,7 +35,7 @@ class Theme
 		);
 	}
 
-	public static function getVideoTag(string $video, string $class = '', $autoplay = false)
+	public static function getVideoTag($video, string $class = '', $autoplay = false)
 	{
 		$video_url = wp_get_attachment_url($video);
 		$video_mime = wp_check_filetype($video_url, wp_get_mime_types());
