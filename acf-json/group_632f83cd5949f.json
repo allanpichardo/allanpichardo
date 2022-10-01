@@ -63,6 +63,21 @@
             "append": ""
         },
         {
+            "key": "field_63378c8d2fd3c",
+            "label": "Link",
+            "name": "link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
             "key": "field_632f855265e4a",
             "label": "Media Type",
             "name": "media_type",
@@ -386,5 +401,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664140764
+    "modified": 1664584939
 }
