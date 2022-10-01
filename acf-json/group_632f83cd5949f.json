@@ -368,7 +368,7 @@
             },
             "min": "",
             "max": "",
-            "button_label": "Add Row"
+            "button_label": "Add Module"
         }
     ],
     "location": [
@@ -401,5 +401,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664584939
+    "modified": 1664587224
 }
