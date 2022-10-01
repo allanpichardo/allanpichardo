@@ -1,16 +1,34 @@
 <?php
-$image_placement = 'left'; // left | right
+$image_placement = get_sub_field('image_placement'); // left | right
+$title = get_sub_field('title');
+$subtitle = get_sub_field('subtitle');
+$media_type = get_sub_field('media_type');
+$image = get_sub_field('image');
+$video = get_sub_field('video');
+$sidenote = get_sub_field('sidenote');
+$body = get_sub_field('body');
 ?>
 <section class="media-and-text page-padding <?=$image_placement === 'right' ? 'image-right' : ''?>">
-	<h2 class="title heading step-2">Title Goes Here</h2>
-    <h3 class="subtitle">Subtitle Goes Here</h3>
+    <?php if(!empty($title)): ?>
+	    <h2 class="title heading step-2"><?=$title?></h2>
+    <?php endif; ?>
+    <?php if(!empty($subtitle)): ?>
+        <h3 class="subtitle"><?=$subtitle?></h3>
+    <?php endif; ?>
     <div class="media-container">
-        <img src="https://placekitten.com/800/600" alt="Hero Image">
-        <div class="notes-area">
-            <p class="sidenote step--1 bold">Some notes 2022</p>
-        </div>
+        <?php if($media_type === 'image'): ?>
+            <?= \Portfolio\Theme::getImageSrcset($image['ID']) ?>
+        <?php endif; ?>
+        <?php if($media_type === 'video'): ?>
+            <?= \Portfolio\Theme::getVideoTag($video['ID'], '', true) ?>
+        <?php endif; ?>
+        <?php if(!empty($sidenote)): ?>
+            <div class="notes-area">
+                <p class="sidenote step--1 bold"><?=$sidenote?></p>
+            </div>
+        <?php endif; ?>
     </div>
     <article class="text-container body">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <?=$body?>
     </article>
 </section>
