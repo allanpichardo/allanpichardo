@@ -1,16 +1,22 @@
 <?php
-$media_type = 'video';
+
+use Portfolio\Theme;
+
+$title      = $args['title'];
+$media_type = $args['media_type'];
+$image      = $args['image'] ?: null;
+$video      = $args['video'] ?: null;
+$link       = $args['link'];
 ?>
 <article class="work-card lazy">
-    <a href="#">
+    <a href="<?=$link['url']?>" target="<?=$link['target']?>">
         <div class="overlay"></div>
         <?php if($media_type === 'image') : ?>
-            <img class="thumbnail" data-src="https://placekitten.com/800/600" alt="Title goes here">
+            <?= Theme::getImageSrcset($image['ID'], '', 'medium', 'thumbnail lazy', true) ?>
         <?php elseif($media_type === 'video') : ?>
-            <video class="thumbnail" muted loop playsinline>
-                <source data-src="<?=sprintf("%s/img/jump1.mp4", get_stylesheet_directory_uri()) ?>" type="video/mp4">
-            </video>
+            <?php $html = Theme::getVideoTag($video['ID'], 'thumbnail lazy', false, true);
+            echo $html; ?>
         <?php endif; ?>
-        <h3 class="title heading step-1">Follow the Drinking Gourd</h3>
+        <h3 class="title heading step-1"><?=$title?></h3>
     </a>
 </article>

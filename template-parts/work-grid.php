@@ -1,5 +1,8 @@
+<?php
+$cards = get_sub_field('cards') ?: [];
+?>
 <section class="work-grid page-padding">
-	<?php for($i = 0; $i < 6; $i++): ?>
-		<?php get_template_part('template-parts/work-card'); ?>
-	<?php endfor; ?>
+	<?php foreach($cards as $card): ?>
+		<?php get_template_part('template-parts/work-card', null, $card); ?>
+	<?php endforeach; ?>
 </section>
