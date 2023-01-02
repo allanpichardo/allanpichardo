@@ -22,6 +22,19 @@ module.exports = {
 			name: 'app',
 			entry: {
 				main: ['./src/js/index.js']
+			},
+			webpackConfig: (config, merge) => {
+				const myConfig = {
+					module: {
+						rules: [
+							{
+								test: /\.glsl$/,
+								use: 'raw-loader'
+							}
+						]
+					}
+				};
+				return merge(config, myConfig);
 			}
 		}
 		// If this has length === 1, then single compiler

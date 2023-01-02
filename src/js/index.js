@@ -24,6 +24,14 @@ function main() {
             window.workGrid = new WorkGrid(workGrid);
         });
     }
+
+    const backgroundRoot = document.querySelector('.background');
+    if(backgroundRoot) {
+        import('./modules/background').then(module => {
+            const Background = module.default;
+            window.background = new Background(backgroundRoot);
+        });
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
