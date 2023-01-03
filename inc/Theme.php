@@ -6,7 +6,7 @@ use WPackio\Enqueue;
 
 class Theme
 {
-	const THEME_NAME = 'portfolio';
+	const THEME_NAME = 'allanpichardo';
 
 	private Hooks $hooks;
 

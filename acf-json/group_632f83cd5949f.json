@@ -6,6 +6,7 @@
             "key": "field_632f83cd65e47",
             "label": "Hero",
             "name": "",
+            "aria-label": "",
             "type": "accordion",
             "instructions": "",
             "required": 0,
@@ -23,6 +24,7 @@
             "key": "field_632f84fe65e48",
             "label": "Version",
             "name": "version",
+            "aria-label": "",
             "type": "radio",
             "instructions": "",
             "required": 0,
@@ -47,6 +49,7 @@
             "key": "field_632f854965e49",
             "label": "Title",
             "name": "title",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -66,6 +69,7 @@
             "key": "field_63378c8d2fd3c",
             "label": "Link",
             "name": "link",
+            "aria-label": "",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -81,6 +85,7 @@
             "key": "field_632f855265e4a",
             "label": "Media Type",
             "name": "media_type",
+            "aria-label": "",
             "type": "radio",
             "instructions": "",
             "required": 0,
@@ -92,7 +97,8 @@
             },
             "choices": {
                 "image": "Image",
-                "video": "Video"
+                "video": "Video",
+                "none": "None"
             },
             "default_value": "",
             "return_format": "value",
@@ -105,6 +111,7 @@
             "key": "field_632f85ad65e4b",
             "label": "Image",
             "name": "image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 1,
@@ -137,6 +144,7 @@
             "key": "field_632f86b965e4c",
             "label": "Video",
             "name": "video",
+            "aria-label": "",
             "type": "file",
             "instructions": "",
             "required": 1,
@@ -164,6 +172,7 @@
             "key": "field_632f877865e4d",
             "label": "Notes",
             "name": "notes",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -183,6 +192,7 @@
             "key": "field_632f8893ad945",
             "label": "Content",
             "name": "",
+            "aria-label": "",
             "type": "accordion",
             "instructions": "",
             "required": 0,
@@ -200,6 +210,7 @@
             "key": "field_632f88b7ad946",
             "label": "Modules",
             "name": "modules",
+            "aria-label": "",
             "type": "flexible_content",
             "instructions": "",
             "required": 0,
@@ -220,6 +231,7 @@
                             "key": "field_63309b675da5e",
                             "label": "Full Width Media",
                             "name": "full_width_media",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -251,6 +263,7 @@
                             "key": "field_6330bd731dbb5",
                             "label": "Multi-Column Text",
                             "name": "multi_column_text",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -282,6 +295,7 @@
                             "key": "field_6330b82c72d67",
                             "label": "Media and Text",
                             "name": "media_and_text",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -313,6 +327,7 @@
                             "key": "field_6330bf81069e0",
                             "label": "Simple Text",
                             "name": "simple_text",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -344,6 +359,7 @@
                             "key": "field_6330c5c5fea3d",
                             "label": "Work Grid",
                             "name": "work_grid",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -378,6 +394,13 @@
                 "operator": "==",
                 "value": "page"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
         ]
     ],
     "menu_order": 0,
@@ -401,5 +424,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664587224
+    "modified": 1672705136
 }

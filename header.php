@@ -4,6 +4,15 @@ use Portfolio\AriaNavWalker;
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SBCT5Q3LS0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-SBCT5Q3LS0');
+    </script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>
@@ -16,7 +25,7 @@ use Portfolio\AriaNavWalker;
 </head>
 <body>
 	<header>
-		<nav class="navigation" aria-label="main-navigation" <? body_class() ?>>
+		<nav class="navigation" aria-label="main-navigation" <?php body_class() ?>>
             <div class="navbar page-padding">
                 <a class="home-link heading step--1" href="<?php echo get_home_url(); ?>"><?php bloginfo('name') ?></a>
                 <button class="nav-toggle" aria-label="Toggle navigation" aria-haspopup="true" aria-expanded="false" aria-controls="nav-drawer">

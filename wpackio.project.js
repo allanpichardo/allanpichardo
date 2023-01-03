@@ -35,7 +35,8 @@ module.exports = {
 					}
 				};
 				return merge(config, myConfig);
-			}
+			},
+			outputPath: './dist',
 		}
 		// If this has length === 1, then single compiler
 		// {
