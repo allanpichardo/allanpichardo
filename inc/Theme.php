@@ -24,7 +24,7 @@ class Theme
 	    add_theme_support( 'post-thumbnails' );
     }
 
-	public static function getImageSrcset($image, string $alt = '', string $size = 'medium', string $class = '', $lazyload = false)
+	public static function getImageSrcset($image, $alt = '', string $size = 'medium', string $class = '', $lazyload = false)
 	{
 		$image_alt = !empty($alt) ? $alt : get_post_meta($image, '_wp_attachment_image_alt', TRUE);
 		$img_src = wp_get_attachment_image_url( $image, $size );

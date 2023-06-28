@@ -6,6 +6,7 @@ $title      = get_sub_field('title');
 $media_type = get_sub_field('media_type'); // image | video | iframe
 $url        = get_sub_field('link');
 $object_fit = get_sub_field('object_fit'); // cover | contain
+$alignment = get_sub_field('alignment') ?: 'center'; // left | center | right
 $autoplay   = get_sub_field('autoplay');
 $tag        = !empty($url) ? 'a' : 'div';
 $image      = get_sub_field('image');
@@ -19,7 +20,7 @@ $sidenote   = get_sub_field('sidenote');
             <h2 class="heading step-2"><?= $title ?></h2>
         </div>
     <?php endif; ?>
-	<<?=$tag?> class="media-container" <?=!empty($url) ? sprintf('href="%s" target="%s"', $url['url'], $url['target']) : ''?> >
+	<<?=$tag?> class="media-container <?=$alignment?>" <?=!empty($url) ? sprintf('href="%s" target="%s"', $url['url'], $url['target']) : ''?> >
         <?php if ($media_type === 'image') : ?>
             <?=Theme::getImageSrcset($image['ID'])?>
         <?php elseif ($media_type === 'video') : ?>
@@ -31,7 +32,7 @@ $sidenote   = get_sub_field('sidenote');
         <?php endif; ?>
     </<?=$tag?>>
     <?php if(!empty($sidenote)): ?>
-        <div class="sidenote">
+        <div class="notes-area sidenote step--1 bold <?=$alignment?>">
             <p><?=$sidenote?></p>
         </div>
     <?php endif; ?>

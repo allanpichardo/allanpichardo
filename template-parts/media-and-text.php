@@ -17,7 +17,7 @@ $body = get_sub_field('body');
     <?php endif; ?>
     <div class="media-container">
         <?php if($media_type === 'image'): ?>
-            <?= \Portfolio\Theme::getImageSrcset($image['ID']) ?>
+            <?= \Portfolio\Theme::getImageSrcset($image['ID'], null, 'large') ?>
         <?php endif; ?>
         <?php if($media_type === 'video'): ?>
             <?= \Portfolio\Theme::getVideoTag($video['ID'], '', true) ?>

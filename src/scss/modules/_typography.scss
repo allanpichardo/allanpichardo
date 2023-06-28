@@ -3,6 +3,8 @@
 body {
   font-family: 'Source Code Pro', monospace;
   font-weight: 300;
+
+  @extend .body;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -10,6 +12,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
+  margin: $space-2xs 0;
+}
+
+time {
+  color: $off-black;
+  display: inline-block;
+  font-weight: 500;
   margin: $space-2xs 0;
 }
 
@@ -23,11 +32,11 @@ p {
 }
 
 .body {
-  font-size: $step--1;
+  font-size: $step-0;
 }
 
 .sidenote {
-  font-size: $step--2;
+  font-size: $step--3 !important;
 }
 
 .italic {

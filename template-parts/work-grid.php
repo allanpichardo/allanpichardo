@@ -6,7 +6,7 @@ $cards = get_sub_field('cards') ?: [];
     <?php if($useWordpressQuery) : ?>
         <?php
 	    $args = [
-		    'post_type' => 'work',
+		    'post_type' => 'post',
 		    'posts_per_page' => -1,
 		    'orderby' => 'menu_order',
 		    'order' => 'ASC'
@@ -20,7 +20,10 @@ $cards = get_sub_field('cards') ?: [];
                 'media_type' => get_field('media_type', $work->ID),
                 'image' => get_field('image', $work->ID),
                 'video' => get_field('video', $work->ID),
-                'link' => get_permalink($work->ID)
+                'link' => [
+                    'url' => get_permalink($work->ID),
+                    'target' => '_self'
+                ]
             ]); ?>
 	    <?php endforeach; ?>
     <?php else: ?>

@@ -19,18 +19,22 @@ $notes      = get_field('notes');
         <<?=$tag?> class="media-container" href="#">
             <?php if ($media_type === 'image') : ?>
                 <?php if(!empty($image)) {
-                    echo Theme::getImageSrcset($image['ID']);
+                    echo Theme::getImageSrcset($image['ID'], null, 'large');
                 } ?>
             <?php elseif ($media_type === 'video') : ?>
                 <?php if(!empty($video)) {
-                    echo Theme::getVideoTag($video['ID']);
+                    echo Theme::getVideoTag($video['ID'], '', true);
                 } ?>
             <?php endif; ?>
         </<?=$tag?>>
     <?php endif; ?>
-    <?php if(!empty($notes)): ?>
-        <div class="notes-area">
+    <div class="notes-area">
+        <?php if(!empty($notes)): ?>
             <p class="sidenote step--1 bold"><?=$notes?></p>
-        </div>
-    <?php endif; ?>
+        <?php endif; ?>
+<!--        --><?php //if(is_single()): ?>
+<!--            <time datetime="--><?php //=get_the_date('Y-m-d')?><!--">--><?php //=get_the_date('F j, Y')?><!--</time>-->
+<!--        --><?php //endif; ?>
+    </div>
+
 </section>

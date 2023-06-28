@@ -14,7 +14,8 @@ $breakpoint-desktop: 1024px;
 $border-radius: 8px;
 
 //Fluid type scale
-/* @link https://utopia.fyi/type/calculator?c=320,21,1.2,1920,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+/* @link https://utopia.fyi/type/calculator/?c=320,21,1.2,1920,24,1.25,5,3,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+$step--3: clamp(0.76rem, calc(0.76rem + 0.01vw), 0.77rem);
 $step--2: clamp(0.91rem, calc(0.90rem + 0.05vw), 0.96rem);
 $step--1: clamp(1.09rem, calc(1.07rem + 0.11vw), 1.20rem);
 $step-0: clamp(1.31rem, calc(1.28rem + 0.19vw), 1.50rem);

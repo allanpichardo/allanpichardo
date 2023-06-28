@@ -55,4 +55,4 @@ use Portfolio\AriaNavWalker;
             </div>
         </nav>
 	</header>
-	<main>
+	<div>

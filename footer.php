@@ -2,7 +2,7 @@
 use Portfolio\AriaNavWalker;
 
 ?>
-    </main>
+    </div>
 	<footer class="footer">
 		<nav class="footer-nav page-padding" aria-label="Footer Navigation">
             <a class="home-link heading step--1" href="<?php echo get_home_url() ?>">Allan Pichardo</a>

@@ -124,8 +124,8 @@ export default class Background {
         const {clientX, clientY} = e;
         const {innerWidth, innerHeight} = window;
 
-        const mouseX = 0.5 * (clientX / innerWidth) * 2 - 1;
-        const mouseY = 0.5 * (clientY / innerHeight) * 2 - 1;
+        const mouseX = 0.5 * (clientX / innerWidth) * 2 - 0.5;
+        const mouseY = 0.5 * (clientY / innerHeight) * 2 - 0.5;
 
         this.scene.children[0].children[0].material.uniforms.mouseX.value = mouseX;
         this.scene.children[0].children[0].material.uniforms.mouseY.value = mouseY;

@@ -12,7 +12,7 @@ $link       = $args['link'];
     <a href="<?=$link['url']?>" target="<?=$link['target']?>">
         <div class="overlay"></div>
         <?php if($media_type === 'image') : ?>
-            <?= Theme::getImageSrcset($image['ID'], '', 'medium', 'thumbnail lazy', true) ?>
+            <?= Theme::getImageSrcset($image['ID'], null, 'medium', 'thumbnail lazy', true) ?>
         <?php elseif($media_type === 'video') : ?>
             <?php $html = Theme::getVideoTag($video['ID'], 'thumbnail lazy', false, true);
             echo $html; ?>
