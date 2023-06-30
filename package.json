@@ -13,7 +13,7 @@
     "bootstrap": "wpackio-scripts bootstrap",
     "build": "NODE_ENV=production wpackio-scripts build",
     "start": "wpackio-scripts start",
-    "archive": "wpackio-scripts pack",
+    "archive": "wpackio-scripts pack"
   },
   "dependencies": {
     "@wpackio/entrypoint": "^6.4.0",
