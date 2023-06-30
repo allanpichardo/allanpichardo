@@ -31,6 +31,5 @@ jobs:
           # Deploy Options
           REMOTE_PATH: "wp-content/themes/allanpichardo/"
           PHP_LINT: TRUE
-          FLAGS: -azvr --inplace --delete --exclude=".*"  --exclude=wp-content/mu-plugins/local-plugin --exclude-from=ignorefile.txt
-          SCRIPT: "path/yourscript.sh"
+          FLAGS: -azvr
           CACHE_CLEAR: TRUE
