@@ -16,7 +16,7 @@ $notes      = get_field('notes');
         <h1 class="heading step-5"><?= $title ?></h1>
     </div>
     <?php if($media_type !== 'none'): ?>
-        <<?=$tag?> class="media-container" href="#">
+        <<?=$tag?> class="media-container" href="<?=$url['url']?>" target=<?=$url['target']?> aria-label=<?=$url['title']?>>
             <?php if ($media_type === 'image') : ?>
                 <?php if(!empty($image)) {
                     echo Theme::getImageSrcset($image['ID'], null, 'large');
