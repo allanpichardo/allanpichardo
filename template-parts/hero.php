@@ -13,7 +13,7 @@ $notes      = get_field('notes');
 ?>
 <section class="hero page-padding">
     <div class="title-area <?=$version?>">
-        <h1 class="heading step-5"><?= $title ?></h1>
+        <h1 class="heading step-4"><?= $title ?></h1>
     </div>
     <?php if($media_type !== 'none'): ?>
         <?php if(!empty($url)): ?>
