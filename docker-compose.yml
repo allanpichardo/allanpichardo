@@ -1,0 +1,86 @@
+services:
+  db:
+    image: mariadb:10.11
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: ${WORDPRESS_DB_NAME}
+      MARIADB_USER: ${WORDPRESS_DB_USER}
+      MARIADB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${WORDPRESS_DB_ROOT_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p${WORDPRESS_DB_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7.2-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+
+  wordpress:
+    image: ${WORDPRESS_IMAGE}
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    ports:
+      - "${WORDPRESS_PORT}:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+      WORDPRESS_TABLE_PREFIX: ${WORDPRESS_TABLE_PREFIX}
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_REDIS_HOST', 'redis');
+        define('WP_REDIS_PORT', 6379);
+        define('WP_REDIS_DATABASE', 0);
+        define('WP_REDIS_CLIENT', 'predis');
+        define('WP_CACHE_KEY_SALT', '${WP_CACHE_KEY_SALT}');
+        define('WP_CACHE', true);
+    volumes:
+      - wordpress_data:/var/www/html
+      - ./:/var/www/html/wp-content/themes/${WP_THEME_SLUG}
+
+  wpcli:
+    image: wordpress:cli-php8.2
+    profiles: ["tools"]
+    depends_on:
+      db:
+        condition: service_healthy
+      wordpress:
+        condition: service_started
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+    volumes:
+      - wordpress_data:/var/www/html
+      - ./:/var/www/html/wp-content/themes/${WP_THEME_SLUG}
+    working_dir: /var/www/html
+    entrypoint: ["sh", "-c"]
+    command: >
+      until [ -f wp-config.php ]; do sleep 2; done;
+      wp core is-installed || wp core install
+      --url='${WP_SITE_URL}'
+      --title='${WP_SITE_TITLE}'
+      --admin_user='${WP_ADMIN_USER}'
+      --admin_password='${WP_ADMIN_PASSWORD}'
+      --admin_email='${WP_ADMIN_EMAIL}'
+      --skip-email;
+      wp theme activate '${WP_THEME_SLUG}' || true;
+      wp plugin install redis-cache --activate || true;
+      wp redis enable || true;
+
+volumes:
+  db_data:
+  redis_data:
+  wordpress_data:
