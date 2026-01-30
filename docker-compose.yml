@@ -79,6 +79,7 @@ services:
     volumes:
       - wordpress_data:/var/www/html
       - ./:/var/www/html/wp-content/themes/${WP_THEME_SLUG}
+      - ./docker/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini:ro
 
   wpcli:
     image: wordpress:cli-php8.2
