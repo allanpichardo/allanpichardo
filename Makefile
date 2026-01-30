@@ -17,7 +17,7 @@ help:
 	"  install  Run WP-CLI installer + theme + Redis (profile tools)" \
 	"  wpcli    Open an interactive WP-CLI shell (profile tools)" \
 	"  shell    Open a shell in the WordPress container" \
-	"  db       Open a MariaDB shell" \
+	"  db       Open a MySQL shell" \
 	"  redis    Open a Redis CLI shell"
 
 build:
