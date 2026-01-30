@@ -271,3 +271,4 @@ fabric.properties
 !.idea/runConfigurations
 
 # End of https://www.toptal.com/developers/gitignore/api/phpstorm+all,macos,composer,node
+wp-content/uploads/

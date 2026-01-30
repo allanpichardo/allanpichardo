@@ -79,6 +79,7 @@ services:
     volumes:
       - wordpress_data:/var/www/html
       - ./:/var/www/html/wp-content/themes/${WP_THEME_SLUG}
+      - ./wp-content/uploads:/var/www/html/wp-content/uploads
       - ./docker/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini:ro
 
   wpcli:
@@ -101,6 +102,7 @@ services:
     volumes:
       - wordpress_data:/var/www/html
       - ./:/var/www/html/wp-content/themes/${WP_THEME_SLUG}
+      - ./wp-content/uploads:/var/www/html/wp-content/uploads
     working_dir: /var/www/html
     entrypoint: ["sh", "-c"]
     command: >
