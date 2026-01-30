@@ -38,6 +38,8 @@ services:
     image: node:20-alpine
     restart: "no"
     working_dir: /var/www/html/wp-content/themes/${WP_THEME_SLUG}
+    environment:
+      NODE_OPTIONS: --openssl-legacy-provider
     depends_on:
       theme-composer:
         condition: service_completed_successfully
